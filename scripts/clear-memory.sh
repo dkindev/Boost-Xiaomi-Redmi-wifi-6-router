@@ -15,6 +15,7 @@
 /etc/init.d/netapi disable
 /etc/init.d/trafficd stop
 /etc/init.d/trafficd disable
+
 opkg remove datacenter
 opkg remove messagingagent
 opkg remove smartcontroller_c

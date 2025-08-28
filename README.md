@@ -8,7 +8,7 @@ Xiaomi Redmi AX5 AX1800 Wi-Fi 6 Mesh Router
 - Redmi AX5 (RA67)
 - Redmi AX1800
 
-## Быстрая навиграция
+## Быстрая навигация
 
 - [Как получить SSH доступ](#ssh-access)
 - [Как настроить byedpi](#configure-byedpi)
@@ -155,6 +155,19 @@ procd_set_param command "$COMMAND" -p 1080 --transparent --hosts $HOSTS_FILE -s1
 
 > [!NOTE]
 > [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) — это DNS-сервер, блокирующий рекламу и трекинг. Его цель – дать вам возможность контролировать всю вашу сеть и все подключённые устройства. Он не требует установки клиентских программ.
+
+- Перед этим выполните шаг [Как освободить память](#clear-memory). AdGuard Home требует много RAM
+- Зайдите в админку и скопируйте значение `stock` из адреса
+
+![browser-stock.png](https://github.com/dkindev/Boost-Xiaomi-Redmi-wifi-6-router/raw/main/assets/browser-stock.png)
+
+- Вставьте значение `stock` в строку ниже и запустите в браузере
+
+```
+http://192.168.31.1/cgi-bin/luci/;stok=STOKVALUEHERE/api/misystem/set_config_iotdev?bssid=gallifrey&user_id=doctor&ssid=-h%0Acurl%20--insecure%20https%3A%2F%2Fraw.githubusercontent.com%2Fdkindev%2FBoost-Xiaomi-Redmi-wifi-6-router%2Fmain%2Fscripts%2Fconfigure-agh.sh%20%7C%20ash%0A
+```
+
+- В ответ вы должны получить `{"code":0}`
 
 ## <a href="#clear-memory" id="clear-memory" name="clear-memory">Как освободить память</a>
 

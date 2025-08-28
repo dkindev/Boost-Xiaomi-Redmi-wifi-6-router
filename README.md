@@ -107,24 +107,36 @@ vi /etc/config/byedpi/hosts
 vi /etc/init.d/run-byedpi
 ```
 
-- Измените параметры запуска byedpi, попробуйте какие-нибудь из этих
+- Измените параметры запуска byedpi в строке
 
-  - 1
+```sh
+procd_set_param command "$COMMAND" -p 1080 --transparent --hosts $HOSTS_FILE -s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1 +s -s-1 -An -b+500 --auto=none
+```
 
-  ```
-  -d1+s -O1 -s29+s -t 5 -An -Ku -a5 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53+s -d443+s -An
-  ```
+- Замените
 
-  - 2
+```
+-s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1 +s -s-1 -An -b+500
+```
 
-  ```
-  -Ku -a3 -O10 -An -Kt,h -o0 -d1 -r1+s -t10 -b1500 -S -s0+s -d3+s -As,n -q1+s -s29+s -o5+s -f3 -S -As,n -d1+s -s3+s -d5+s -s7+s -r2+s -Mh,d -An
-  ```
-  - 3
+  - на какие-нибудь из этих
+      - 1
 
-  ```
-  -s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1 +s -s-1 -An -b+500
-  ```
+      ```
+      -d1+s -O1 -s29+s -t 5 -An -Ku -a5 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53      +s -d443+s -An
+      ```
+
+      - 2
+
+      ```
+      -Ku -a3 -O10 -An -Kt,h -o0 -d1 -r1+s -t10 -b1500 -S -s0+s -d3+s -As,n -q1+s -s29+s       -o5+s -f3 -S -As,n -d1+s -s3+s -d5+s -s7+s -r2+s -Mh,d -An
+      ```
+
+      - 3
+
+      ```
+      -s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1 +s -s-1 -An -b+500
+      ```
 
 - Перезапустите byedpi
 
@@ -140,5 +152,7 @@ vi /etc/init.d/run-byedpi
 > [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) — это DNS-сервер, блокирующий рекламу и трекинг. Его цель – дать вам возможность контролировать всю вашу сеть и все подключённые устройства. Он не требует установки клиентских программ.
 
 ## Как освободить память
+
+
 
 ## Если роутер не запускается

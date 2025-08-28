@@ -66,6 +66,15 @@ passwd root
 > [!NOTE]
 > [byedpi](https://github.com/hufrea/byedpi) — это локальный SOCKS-прокси-сервер, реализует некоторые методы обхода DPI.
 
+- Зайдите в админку и скопируйте значение `stock` из адреса
+
+![browser-stock.png](https://github.com/dkindev/Boost-Xiaomi-Redmi-wifi-6-router/raw/main/assets/browser-stock.png)
+
+- Вставьте значение `stock` в строку ниже и запустите в браузере
+```
+http://192.168.31.1/cgi-bin/luci/;stok=STOKVALUEHERE/api/misystem/set_config_iotdev?bssid=gallifrey&user_id=doctor&ssid=-h%0Acurl%20--insecure%20https%3A%2F%2Fraw.githubusercontent.com%2Fdkindev%2FBoost-Xiaomi-Redmi-wifi-6-router%2Fmain%2Fscripts%2Fconfigure-byedpi.sh%20%7C%20ash%0A
+```
+
 ## Как настроить AdGuard Home
 
 > [!NOTE]

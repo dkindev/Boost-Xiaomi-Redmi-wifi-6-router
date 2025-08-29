@@ -85,7 +85,7 @@ http://192.168.31.1/cgi-bin/luci/;stok=STOKVALUEHERE/api/misystem/set_config_iot
 ```
 
 - В ответ вы должны получить `{"code":0}`
-- Теперь YouTube и несколько других сервисов должены работать
+- Теперь YouTube и несколько других сервисов должны работать
 
 ### <a href="#configure-byedpi__add-custom-host" id="configure-byedpi__add-custom-host" name="configure-byedpi__add-custom-host">Разблокировать свой сайт</a>
 

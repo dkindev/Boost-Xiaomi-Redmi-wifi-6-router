@@ -142,6 +142,24 @@ procd_set_param command "$COMMAND" -p 1080 --transparent --hosts $HOSTS_FILE -s1
       ```
       -Ku -a1 -An -d1 -s3+s
       ```
+      
+      - 4
+
+      ```
+      -o1 -o25+s -T3 -At o--tlsrec 1+s
+      ```
+      
+      - 5
+
+      ```
+      -s0 -o1 -d1 -r1+s -Ar -o1 -At -f-1 -r1+s -As
+      ```
+      
+      - 6
+
+      ```
+      -Ku -a3 -An -Kt,h -n vk.com -d1 -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -d35+s -t15 -b4500 -r1+s -S -Mh,d -As -Kt,h -n vk.com -d1 -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -d35+s -t15 -b4500 -S -Mh,d -An
+      ```
 
 - Перезапустите byedpi
 

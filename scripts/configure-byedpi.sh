@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Download byedpi
-curl --insecure -L https://github.com/hufrea/byedpi/releases/download/v0.17.2/byedpi-17.2-armv7l.tar.gz | tar xzf - -C /usr/bin
+curl --insecure -L https://github.com/hufrea/byedpi/releases/download/v0.17.3/byedpi-17.3-armv7l.tar.gz | tar xzf - -C /usr/bin
 
 # Create hosts
 mkdir -p /etc/config/byedpi && cat > /etc/config/byedpi/hosts << 'EOF'
@@ -46,7 +46,7 @@ instagram.com
 EOF
 
 # Create service to run at boot
-cat > /etc/init.d/run-byedpi << 'EOF'
+cat > /etc/init.d/byedpi << 'EOF'
 #!/bin/sh /etc/rc.common
 
 # Service metadata
@@ -107,15 +107,10 @@ reload_service() {
 EOF
 
 # Enable execution
-chmod +x /etc/init.d/run-byedpi
+chmod +x /etc/init.d/byedpi
 
 # Enable service to start at boot
-/etc/init.d/run-byedpi enable
+/etc/init.d/byedpi enable
 
 # Start the service now
-/etc/init.d/run-byedpi start
-
-# ARGs
-# -d1+s -O1 -s29+s -t 5 -An -Ku -a5 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53+s -d443+s -An
-# -Ku -a3 -O10 -An -Kt,h -o0 -d1 -r1+s -t10 -b1500 -S -s0+s -d3+s -As,n -q1+s -s29+s -o5+s -f3 -S -As,n -d1+s -s3+s -d5+s -s7+s -r2+s -Mh,d -An
-# -s1 -q1 -Y -Ar -s5 -o1+s -At -f-1 -r1+s -As -s1 -o1 +s -s-1 -An -b+500
+/etc/init.d/byedpi start

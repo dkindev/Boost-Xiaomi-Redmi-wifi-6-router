@@ -100,16 +100,16 @@ vi /etc/config/byedpi/hosts
 - Перезапустите byedpi
 
   ```sh
-  /etc/init.d/run-byedpi restart
+  /etc/init.d/byedpi restart
   ```
 
 ### <a id="configure-byedpi__not-working">Если byedpi не работает</a>
 
 - Войдите по SSH
-- Отредактируйте файл `/etc/init.d/run-byedpi`
+- Отредактируйте файл `/etc/init.d/byedpi`
 
 ```sh
-vi /etc/init.d/run-byedpi
+vi /etc/init.d/byedpi
 ```
 
 - Измените параметры запуска byedpi в строке
@@ -164,7 +164,7 @@ procd_set_param command "$COMMAND" -p 1080 --transparent --hosts $HOSTS_FILE -s1
 - Перезапустите byedpi
 
 ```sh
-/etc/init.d/run-byedpi restart
+/etc/init.d/byedpi restart
 ```
 
 - Если ничего не помогло, читайте [документацию](https://github.com/hufrea/byedpi) к byedpi
